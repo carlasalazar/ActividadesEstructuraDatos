@@ -1,1 +1,21 @@
-
+public class BusquedaBinaria {
+    int busquedaBinaria(int elementos[], int numABuscar){
+        int i = 0;
+        int f = elementos.length -1;
+      
+        
+        while(i<=f){
+             int m = (i+f)/2;
+            if(elementos[m] == numABuscar){
+                return m;
+            }
+            
+            if (elementos [m] < numABuscar){
+                i = m+1;
+            }else{ 
+                f = m - 1;
+            }
+        }
+        return -1;
+    }
+}
