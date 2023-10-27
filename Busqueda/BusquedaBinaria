@@ -1,5 +1,33 @@
-public class BusquedaBinaria {
-    int busquedaBinaria(int elementos[], int numABuscar){
+import java.util.Arrays;
+import java.util.Random;
+
+public class Main {
+    public static void main(String[] args){
+        
+        int[] elementos = new int[1000];
+        for(int i = 0; i < 1000; i++){
+            elementos[i] = (int)(Math.random() * 1000);
+        }
+        Arrays.sort(elementos);
+        
+        int x = new Random().nextInt(1000);
+       
+        for(int num : elementos){
+        System.out.print(" " + num + ",");
+        }
+        System.out.println(" ");
+        
+        int resultado = busquedaBinaria(elementos, x);
+                
+        if(resultado != -1){
+            System.out.println("El valor " + x + " se encuentra en el indice " + resultado);
+        }else{
+            System.out.println("El valor " + x + " no se ha encontrado en el arreglo");
+        }
+     
+    }
+    
+    public static int busquedaBinaria(int[] elementos, int numABuscar){
         int i = 0;
         int f = elementos.length -1;
       
