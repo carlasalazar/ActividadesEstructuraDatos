@@ -1,11 +1,18 @@
+/**
+ * 
+ * @author Alumno
+ * @param <T> 
+ */
 public class NodoArbol <T> {
 
     private T dato;//Dato generico almacenado en el nodo
   private boolean esBinario = false;//Indica si el nodo es binario
   private NodoArbol <T> primerHijo;//Primer hijo del arbol
   private NodoArbol <T> siguienteHermano;//Siguiente hermano del arbol
-
-  //El contructor crea un nuevo nodo con un dato, tanto el hijo como el hermano son nulos
+/**
+ * El contructor crea un nuevo nodo con un dato, tanto el hijo como el hermano son nulos
+ * @param dato 
+ */
   public NodoArbol (T dato) {
     this.dato = dato;
     primerHijo = null;
@@ -91,3 +98,4 @@ public class NodoArbol <T> {
     System.out.print(dato + "\t");
   }
 }
+
