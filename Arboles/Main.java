@@ -1,3 +1,7 @@
+/**
+ * 
+ * @author Alumno
+ */
 public class Main {
     public static void main (String[] args){
         //Arbol binario
@@ -44,7 +48,12 @@ public class Main {
         arbol.agregarNodoArbol(nodoI, nodoN);
         arbol.agregarNodoArbol(nodoI, nodoO);
         
-       
+        System.out.println("¿El árbol está vacío? " + arbol.estaVacio());
+        System.out.println("Altura del árbol: " + arbol.obtenerAltura());
+
+        System.out.println("\nImprimir subárbol:");
+        arbol.imprimirSubArbol(arbol.obtenerRaiz().obtenerPrimerHijo());
+        
         arbol.imprimirArbol(Recorrido.PREFIJO);
         
        
@@ -52,6 +61,8 @@ public class Main {
         
         
         arbol.imprimirArbol(Recorrido.POSFIJO);
+        
+        
     }
     
 }
