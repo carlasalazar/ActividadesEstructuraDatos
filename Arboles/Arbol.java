@@ -73,4 +73,64 @@ public class Arbol <T> {
         break;
     }
   }
+  /**
+   * 
+   * @return 
+   */
+  public boolean estaVacio() {
+        return raiz == null;
+    }
+  /**
+ * 
+ * @return 
+ */
+    public int obtenerAltura() {
+        return obtenerAltura(raiz);
+    }
+/**
+ * 
+ * @param nodo
+ * @return 
+ */
+    private int obtenerAltura(NodoArbol<T> nodo) {
+        if (nodo == null) {
+            return 0;
+        } else {
+            int alturaMaxima = 0;
+            NodoArbol<T> hijo = nodo.obtenerPrimerHijo();
+            while (hijo != null) {
+                alturaMaxima = Math.max(alturaMaxima, obtenerAltura(hijo));
+                hijo = hijo.obtenerSiguienteHermano();
+            }
+            return 1 + alturaMaxima;
+        }
+    }
+/**
+ * 
+ * @param nodo 
+ */
+    public void imprimirSubArbol(NodoArbol<T> nodo) {
+    if (nodo != null) {
+      System.out.println("Subárbol a partir del nodo con dato: " + nodo.getDato());
+      imprimirSubArbolRecursivo(nodo, 0);
+    } else {
+      System.out.println("El nodo proporcionado es nulo. No se puede imprimir el subárbol");
+    }
+  }
+/**
+ * 
+ * @param nodo
+ * @param nivel 
+ */
+  private void imprimirSubArbolRecursivo(NodoArbol<T> nodo, int nivel) {
+    if (nodo != null) {
+      System.out.println("Nivel " + nivel + ": " + nodo.getDato());
+
+      NodoArbol<T> hijo = nodo.obtenerPrimerHijo();
+      while (hijo != null) {
+        imprimirSubArbolRecursivo(hijo, nivel + 1);
+        hijo = hijo.obtenerSiguienteHermano();
+      }
+    }
+  }
 }
